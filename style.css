@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body{
+    background-color: #F5F5F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+}
+
+#topCont{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 1rem 0;
+}
+
+#scalePicCont{
+    background-color: #fff;
+    width: fit-content;
+    padding: 2px;
+    border-radius: 5rem;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.scaleBtn{
+    font-size: large;
+    border: none;
+    border-radius: 100%;
+    padding: 5px;
+    width: 45px;
+    height: 45px;
+    background-color: #fff;
+    cursor: pointer;
+    text-align: center;
+}
+
+.scaleBtn.active{
+    background-color: #EBEBEB;
+    cursor:default;
+}
+
+#locationCont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: #fff;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    padding: 5px;
+    border-radius: 5rem;
+}
+
+#locPic{
+    border: none;
+    outline: none;
+    font-size: medium;
+    max-width: 150px;
+}
+
+#locPic:focus{
+    border-bottom: 2px solid #333;
+}
+
+#timeCont{
+    background-color: #fff;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    border-radius: 5rem;
+    width: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    font-weight: 600;
+}
+
+#forecastCont{
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    border-radius: 2rem;
+    height: 250px;
+    display: grid;
+    grid-template-columns: repeat(3 ,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: 1rem;
+    place-items: center;
+}
+
+#temp{
+    font-size: xxx-large;
+}
+
+.iconCont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px
+}
+
+#daysCont{
+    display: flex;
+    margin: 1rem 0;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.dayCont{
+    width: 47%;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 5rem;
+    background-color: #fff;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
