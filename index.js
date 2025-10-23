@@ -68,7 +68,7 @@ search.addEventListener("input", (event) => {
   });
 });
 
-let displayedDay = 1;
+let displayedDay = 2;
 let forecast;
 
 // getting the info elements
@@ -186,6 +186,28 @@ document.addEventListener("click", async (event) => {
         const lang = parseFloat(city[3].replace(/"/g, ""));
 
         displayContent(lat, lang, scale);
+
+        //rotating days on click
+        const dayBtns = document.querySelectorAll(".dayCont");
+
+        dayBtns.forEach((dayBtn) => {
+          dayBtn.addEventListener("click", () => {
+            if (dayBtn.id == "one") {
+              if (firstDay.textContent === "Yesterday") {
+                displayedDay = 0;
+              } else if (firstDay.textContent === "Today") {
+                displayedDay = 1;
+              }
+            } else if (dayBtn.id === "two") {
+              if (secondDay.textContent === "Today") {
+                displayedDay = 1;
+              } else if (secondDay.textContent === "Tomorrow") {
+                displayedDay = 2;
+              }
+            }
+            displayContent(lat, lang, scale);
+          });
+        });
       }
     }
   }
@@ -193,16 +215,16 @@ document.addEventListener("click", async (event) => {
 
 // getting the scale
 
-let scaleBtns = document.querySelectorAll(".scaleBtn");
+const scaleBtns = document.querySelectorAll(".scaleBtn");
 
 let scale = "Cscale";
 
 scaleBtns.forEach((scaleBtn) => {
   scaleBtn.addEventListener("click", () => {
-    if (scaleBtn.id === "Fscale" && temp && scale === "Cscale") {
+    if (scaleBtn.id === "Fscale" && scale === "Cscale") {
       temp.textContent =
         ((9 / 5) * parseFloat(temp.textContent) + 32).toFixed(1) + "°";
-    } else if (scaleBtn.id === "Cscale" && temp && scale === "Fscale") {
+    } else if (scaleBtn.id === "Cscale" && scale === "Fscale") {
       temp.textContent =
         ((5 / 9) * (parseFloat(temp.textContent) - 32)).toFixed(1) + "°";
     }
