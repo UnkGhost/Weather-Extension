@@ -1,51 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Just a simple weather forecast extension">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Just a simple weather forecast extension"
+    />
     <title>Weather Forecast</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <section>
-    <section id="topCont">
+      <!--the top section contains scale switch location and time-->
+      <section id="topCont">
         <div id="scalePicCont">
-            <input type="button" id="Cscale" class="scaleBtn active" value="°C">
-            <input type="button" id="Fscale" class="scaleBtn" value="°F">
+          <input type="button" id="Cscale" class="scaleBtn active" value="°C" />
+          <input type="button" id="Fscale" class="scaleBtn" value="°F" />
         </div>
         <div id="locationCont">
-            <img src="assets/location.svg" alt="location" width="28px">
-            <input type="search" name="location" id="locPic">
-            <input type="image" src="assets/pick.svg" width="28px">
+          <img src="assets/location.svg" alt="location" width="28px" />
+          <input
+            type="search"
+            name="location"
+            id="locPic"
+            autocomplete="off"
+            placeholder="Pick a city"
+          />
+          <ul id="locationsList"></ul>
         </div>
-        <div id="timeCont">12:30</div>
-    </section>
-    <section id="forecastCont">
-            <span id="temp">69°</span>
-            <span id="weatherCode">weather code</span>
-            <img src="" alt="weather code">
-            <div class="iconCont">
-                <img src="assets/drops.svg" alt="humidity" width="28px">
-                <span id="humidity">humidity</span>
-            </div>
-            <span id="day">Today</span>
-            <div class="iconCont">
-                <img src="assets/wind.svg" alt="wind" width="28px" style="transform: rotateZ(180deg);">
-                <span id="wind">wind speed</span>
-            </div>
-       
-    </section>
-    <section id="daysCont">
-        <div class="dayCont">
-            <span>Yesterday</span>
-            <img src="" alt="weather code">
+
+        <div id="timeCont"></div>
+      </section>
+      <!--the main content-->
+      <section id="forecastCont">
+        <span class="intel" id="temp"></span>
+        <span class="intel" id="weatherCode"></span>
+        <img
+          class="intel"
+          id="weatherImg"
+          src=""
+          alt="weather code"
+          width="100px"
+        />
+        <div class="iconCont intel">
+          <img src="assets/drops.svg" alt="humidity" width="28px" />
+          <span id="humidity"></span>
         </div>
-        <div class="dayCont">
-            <span>Tomorrow</span>
-            <img src="" alt="weather code">
+        <span id="day" class="intel"></span>
+        <div class="iconCont intel">
+          <img
+            src="assets/wind.svg"
+            alt="wind"
+            width="28px"
+            style="transform: rotateZ(180deg)"
+          />
+          <span id="wind"></span>
         </div>
+      </section>
+      <!--the buttons to displays other days forecast-->
+      <section id="daysCont">
+        <div class="dayCont intel" id="one">
+          <div>
+            <span id="firstDay"></span>
+            <span id="firstDayCode"></span>
+          </div>
+
+          <img
+            src=""
+            alt="weather code"
+            id="firstDayPic"
+            class="weatherCodePic"
+          />
+        </div>
+        <div class="dayCont intel" id="two">
+          <div>
+            <span id="secondDay"></span>
+            <span id="secondDayCode"></span>
+          </div>
+
+          <img
+            src=""
+            alt="weather code"
+            id="secondDayPic"
+            class="weatherCodePic"
+          />
+        </div>
+      </section>
     </section>
-</section>
-</body>
+    <script type="module" src="index.js"></script>
+  </body>
 </html>
